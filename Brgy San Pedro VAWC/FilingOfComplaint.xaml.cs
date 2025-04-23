@@ -91,7 +91,9 @@ public partial class FilingOfComplaint : ContentPage
                 CaseDetails = new CaseDetails
                 {
                     CaseNumber = caseId,
-                    ComplaintDate = DateTime.UtcNow.ToString("yyyy-MM-dd-tt"),
+                    ComplaintDate = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow,
+                     TimeZoneInfo.FindSystemTimeZoneById("Singapore Standard Time"))
+                    .ToString("yyyy-MM-dd HH:mm:ss"),
                     VAWCCase = "N/A",
                     SubCase = "N/A",
                     CaseStatus = "Pending",
@@ -108,13 +110,14 @@ public partial class FilingOfComplaint : ContentPage
                         Region = PIARegion.Text ?? ""
                     }
                 }
+
             };
 
             bool success = await _firestoreService.SubmitComplaintAsync(complaint);
 
             if (success)
             {
-                await DisplayAlert("Success", $"Complaint submitted!\nCase ID: {caseId}", "OK");
+                await DisplayAlert("Success", $"Complaint submitted!\nCase ID: {caseId}\n Please Go to the Barangay Office for Further instructions of your complaint", "OK");
                 await ClearForm();
             }
             else

@@ -10,11 +10,13 @@
         <VerticalStackLayout Padding="20" Spacing="10">
 
             <!-- Header -->
-            <Button Text="File Your Complaint"
-                    BackgroundColor="#FF2DD5"
-                    TextColor="White"
-                    FontAttributes="Bold"
-                    CornerRadius="10" />
+            <Border BackgroundColor="#FF2DD5" StrokeShape="RoundRectangle 20" Padding="15">
+                <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
+                    <Label Text="File Your Complaint"
+                            FontSize="14"
+                            HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+            </Border>
 
             <!-- Complainant Section -->
             <Label Text="Complainant" FontAttributes="Bold" />
@@ -28,32 +30,33 @@
                 <RadioButton x:Name="FemaleRadio" Content="Female" GroupName="SexGroup" />
             </HorizontalStackLayout>
 
+
             <Entry x:Name="ContactEntry" Placeholder="Contact No." Keyboard="Numeric" />
-            <Entry x:Name="CityEntry" Placeholder="San Pedro Pagadian City" />
+            <Entry x:Name="CityEntry" Placeholder="Municipality" />
 
             <!-- Purok -->
             <Label Text="Purok" />
             <Picker x:Name="PurokEntry" Title="Select Purok">
                 <Picker.Items>
-                    <x:String>Purok 1</x:String>
-                    <x:String>Purok 2</x:String>
-                    <x:String>Purok 3</x:String>
-                    <x:String>Purok 4</x:String>
-                    <x:String>Purok 5</x:String>
-                    <x:String>Purok 6</x:String>
-                    <x:String>Purok 7</x:String>
-                    <x:String>Purok 8</x:String>
-                    <x:String>Purok 9</x:String>
-                    <x:String>Purok 10</x:String>
-                    <x:String>Purok 11</x:String>
-                    <x:String>Purok 12</x:String>
-                    <x:String>Purok 13</x:String>
-                    <x:String>Purok 14</x:String>
+                    <x:String>Purok Adelfa</x:String>
+                    <x:String>Purok Bougainvilla</x:String>
+                    <x:String>Purok Campo Islam</x:String>
+                    <x:String>Purok Fisherville</x:String>
+                    <x:String>Purok Golden Shower</x:String>
+                    <x:String>Purok Kabingaan</x:String>
+                    <x:String>Purok Lacturan</x:String>
+                    <x:String>Purok Masanagon - 1</x:String>
+                    <x:String>Purok Masanagon - 2</x:String>
+                    <x:String>Purok Narra</x:String>
+                    <x:String>Purok Palmera</x:String>
+                    <x:String>Purok Rosas</x:String>
+                    <x:String>Purok Sampaguita</x:String>
+                    <x:String>Purok Sunshine</x:String>
                 </Picker.Items>
             </Picker>
 
             <!-- Additional Complainant Fields -->
-            <Label Text="Civil Status" />
+            <Label Text="Complainant Civil Status" />
             <Picker x:Name="CivilStatusEntry" Title="Select Civil Status">
                 <Picker.Items>
                     <x:String>Single</x:String>
